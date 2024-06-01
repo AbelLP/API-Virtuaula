@@ -1,0 +1,18 @@
+package com.example.apivirtuaula.service;
+
+import com.example.apivirtuaula.model.Administrador;
+
+import java.util.List;
+import java.util.Optional;
+
+public interface AdministradorService {
+    List<Administrador> findAllAdministradores();
+
+    Optional<Administrador> findAdministradorById(String id);
+
+    Administrador saveAdministrador(Administrador administrador);
+
+    boolean deleteAdministrador(String id);
+
+    Administrador updateAdministrador(Administrador administrador);
+}
