@@ -41,6 +41,8 @@ public class UsuariosServiceImpl implements UsuariosService {
 
     @Override
     public boolean cambiarClave(String dni, String clave) {
+        String salt="$2a$10$M1uxD/7W/18H7uRwOfGkqu";
+        clave=BCrypt.hashpw(clave, salt);
         int filas= usuariosRepository.cambiarClave(dni, clave);
         if(filas>0){
             return true;
